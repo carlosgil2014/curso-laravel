@@ -23,7 +23,7 @@ class PermisoController extends Controller
      */
     public function create()
     {
-        //
+        return 'llegaSTE A CREAR';
     }
 
     /**

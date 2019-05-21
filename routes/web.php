@@ -14,6 +14,11 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'InicioController@index');
 
-Route::get('permiso', 'PermisoController@index');
+Route::resources([
+    'trainer' => 'TrainerControler'
 
-Route::get('permisos', 'PermisoController@create');
+]);
+
+//Route::resource('trainer', 'TrainerControler@index');
+
+//Route::get('trainer/crear', 'TrainerControler@create');

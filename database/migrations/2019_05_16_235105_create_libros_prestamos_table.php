@@ -17,7 +17,7 @@ class CreateLibrosPrestamosTable extends Migration
             $table->increments('id');
             $table->unsignedInteger('libro_id');
             $table->foreign('libro_id', 'fk_libroprestamo_libro')->references('id')->on('libros')->onDelete('restrict')->onUpdate('restrict');
-            $table->integer('user_id')->unsigned();
+            $table->unsignedInteger('user_id');
             $table->foreign('user_id', 'fk_libroprestamo_usuario')->references('id')->on('usuarios')->onDelete('restrict')->onUpdate('restrict');
             $table->date('fecha_prestamo');
             $table->string('prestamo_a', '100');
