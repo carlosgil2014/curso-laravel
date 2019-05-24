@@ -1,8 +1,7 @@
 <?php
 
-use App\Trainer;
 namespace App\Http\Controllers;
-
+use App\Trainer;
 use Illuminate\Http\Request;
 
 
@@ -15,7 +14,10 @@ class TrainerControler extends Controller
      */
     public function index()
     {
-        return view('permiso');
+        // all consulta en la tabla y trae todo
+        $trainers = Trainer::all();
+        //compact generar un array con la informacion que le asignemos
+        return view('trainerIndex', compact('trainers'));
     }
 
     /**
@@ -39,7 +41,7 @@ class TrainerControler extends Controller
         $trainer = new Trainer();
         $trainer->name = $request->input('nombre');
         $trainer->save();
-        return 'guardado';
+        return view('trainerIndex');
     }
 
     /**
